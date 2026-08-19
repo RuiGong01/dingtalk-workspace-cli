@@ -89,6 +89,7 @@ policy: test-auth-legacy-compat
 	@$(POLICY_ENV) ./scripts/policy/check-open-source-assets.sh
 	@$(POLICY_ENV) ./scripts/policy/check-skill-context-budget.sh
 	@$(POLICY_ENV) ./scripts/policy/check-multi-im-skill-chain.sh
+	@$(POLICY_ENV) ./scripts/policy/check-multi-doc-skill-chain.sh
 	@python3 scripts/run_chat_shortcut_live_audit_test.py
 	@$(POLICY_ENV) ./scripts/policy/check-command-surface.sh --strict
 	@$(POLICY_ENV) ./scripts/policy/check-generated-drift.sh
@@ -148,6 +149,9 @@ skill-context-budget:
 
 multi-im-skill-chain-integrity:
 	@./scripts/policy/check-multi-im-skill-chain.sh
+
+multi-doc-skill-chain-integrity:
+	@./scripts/policy/check-multi-doc-skill-chain.sh
 
 skill-mono-multi-content:
 	@./scripts/policy/check-mono-multi-skill-content.sh
